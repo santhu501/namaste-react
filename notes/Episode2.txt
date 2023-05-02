@@ -1,0 +1,37 @@
+
+- npm installs the packages. npm i or npm install, both are same.
+- npx executes the packages.
+- .gitignore file tells git to ignore those changes for pushing to git.
+- using CDN react links as source is not the right way to use react. Always install react through npm and use it.
+- node_modules can be regenerated again with npm install
+- Any folders that are generated automatically should not be pushed to git. like node_modules, parcel-cache, dist folders etc.
+
+^ carat symbol in package json file says minor version changes are ok.
+~ tilde symbol is used to specify major version changes are ok.
+
+
+# Parcel Features
+
+- Dev Build
+- Local Server
+- HMR - Hot Module Replacement
+- File Watching Algorith - Written in c++
+- Caching - Faster Builds
+- Image Optimization
+- Minification
+- Bundling
+- Compress
+- Content Hashing
+- Code Splitting
+- Differential bundling - Support old and new browsers
+- Diagnositcs
+- Error Handling
+- HTTPs
+- Tree Shaking - Remove unused code
+- Different dev and production bundles
+
+
+
+
+npx parcel index.html - dev mode Build
+npx parcel build index.html - production build
