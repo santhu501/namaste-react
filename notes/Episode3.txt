@@ -1,0 +1,7 @@
+we can make use of scripts section in package json file to write the commands to start the app and build the app.
+"scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+npm start and npm run start are same
+but for build, it should be npm run build. Just npm build will not work.
