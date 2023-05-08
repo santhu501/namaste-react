@@ -56,8 +56,17 @@ const HeadingComponent3 = () => (
 
 
 // A component inside a component is called component compostion.
+
+// we can write javascript code inside JSX with in curly braces. JSX will also sanitize the code inside curly braces to avoid malicious scripts.
+// JSX will prevent cross site scripting.
+
+const num = 2345;
+const num2 = 999;
+
 const Title = () => (
     <div className="testDiv">
+        {num}
+        <h2>{num2}</h2>
         <HeadingComponent2/>
         <h1 className="heading"> h1 element info </h1>
     </div>
