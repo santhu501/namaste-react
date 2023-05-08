@@ -51,8 +51,8 @@ const HeadingComponent2 = () => <h1 className="parent"> Namaste React from React
 // or 
 
 const HeadingComponent3 = () => (
-<h1 className="parent"> Namaste React from React functional component 3 </h1>
-);
+    <h1 className="parent"> Namaste React from React functional component 3 </h1>
+    );
 
 
 // A component inside a component is called component compostion.
@@ -72,5 +72,23 @@ const Title = () => (
     </div>
 );
 
+const Title2 = () => (
+    <div className="testDiv">
+        {num}
+        <h2>{num2}</h2>        
+        <h1 className="heading"> h1 element info </h1>
+    </div>
+);
+
+const HeadingComponent4 = () => (
+    <div className="testDiv">
+        {Title2()}
+        <Title2/>
+        <Title2></Title2>
+        <HeadingComponent2/>
+        <h1 className="heading"> h1 element info </h1>
+    </div>
+    );
+
 // To render a functional component, you cannot use HeadingComponent directly in render. you need to send it as react element which is <HeadingComponent/>
-rootElem.render(<Title/>);
+rootElem.render(<HeadingComponent4/>);
