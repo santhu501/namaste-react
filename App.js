@@ -33,22 +33,26 @@ console.log(JSXElement);
 
 //const heading = React.createElement("h1", {id:"h1Element"}, "first react");
 const rootElem = ReactDOM.createRoot(document.getElementById("root"));
-rootElem.render(JSXElement);
+//rootElem.render(JSXElement);
 
 // React functional components are the ones that are mostly used now.
 // React class based components usage is pretty old pattern.
 // A function that returns React element or JSX is a React functional component.
+// A functional component name should always start with a capital letter.
 
-const headingComponent = () => {
-    return <h1 classNa="parent"> Namaste React </h1>
+const HeadingComponent = () => {
+    return <h1 classNa="parent"> Namaste React from React functional component </h1>
 };
 
 // or for one line statements, we can right like below ways.
 
-const headingComponent2 = () => <h1 className="parent"> Namaste React </h1>;
+const HeadingComponent2 = () => <h1 className="parent"> Namaste React from React functional component 2 </h1>;
 
 // or 
 
-const headingComponent3 = () => (
-<h1 className="parent"> Namaste React </h1>
+const HeadingComponent3 = () => (
+<h1 className="parent"> Namaste React from React functional component 3 </h1>
 );
+
+// To render a functional component, you cannot use HeadingComponent directly in render. you need to send it as react element which is <HeadingComponent/>
+rootElem.render(<HeadingComponent/>);
