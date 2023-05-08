@@ -120,6 +120,13 @@ const HeadingComponent4 = () => (
     </React.Fragment>
 ); */
 
+// we can solve it without react fragment statement also, just with an empty tag.
+/* (
+    <>
+    <div></div>
+    <div></div>
+    </>
+); */
 
 // To render a functional component, you cannot use HeadingComponent directly in render. you need to send it as react element which is <HeadingComponent/>
 rootElem.render(<HeadingComponent4/>);
