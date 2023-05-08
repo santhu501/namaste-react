@@ -60,6 +60,7 @@ const HeadingComponent3 = () => (
 // we can write javascript code inside JSX with in curly braces. JSX will also sanitize the code inside curly braces to avoid malicious scripts.
 // JSX will prevent cross site scripting.
 
+
 const num = 2345;
 const num2 = 999;
 
@@ -89,6 +90,36 @@ const HeadingComponent4 = () => (
         <h1 className="heading"> h1 element info </h1>
     </div>
     );
+
+
+// JSX will not allow multiple parent elements. it can have only one parent element. The below snippet is not possible.
+/* 
+(
+    <div></div>
+    <div></div>
+);
+ */
+
+// JSX will not allow multiple parent elements. it can have only one parent element. we can keep one more parent div as root but its unnecessary to the DOM.
+/* 
+(
+    <div>
+    <div></div>
+    <div></div>
+    </div>
+);
+ */
+
+// To solve the above parent elements issue, JSX provides a way which is React Fragment. This will no longer keep such unnecessary divs or fragments.
+// React fragment is just an empty tag.
+
+/* (
+    <React.Fragment>
+    <div></div>
+    <div></div>
+    </React.Fragment>
+); */
+
 
 // To render a functional component, you cannot use HeadingComponent directly in render. you need to send it as react element which is <HeadingComponent/>
 rootElem.render(<HeadingComponent4/>);
