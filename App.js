@@ -120,7 +120,7 @@ const HeadingComponent4 = () => (
     </React.Fragment>
 ); */
 
-// we can solve it without react fragment statement also, just with an empty tag.
+// we can solve it without react fragment statement also, just with an empty tag. its a short hand of react fragment.
 /* (
     <>
     <div></div>
