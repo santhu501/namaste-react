@@ -5,3 +5,19 @@ we can make use of scripts section in package json file to write the commands to
   },
 npm start and npm run start are same
 but for build, it should be npm run build. Just npm build will not work.
+
+- JSX is converted to React element by javascript compiler Babel.
+- JSX is not HTML, they are different.
+- Attributes to JSX will be camel case.  ex: className, tabIndex.
+
+JSX on a single line does not need parenthesis but we can keep it. its needed for multiple lines.
+
+const JSXheading = <h1 className="head"> Namaste React </h1>
+
+const JSXheading = (
+  <h1 className="head">
+  Namaste React
+  </h1> );
+
+  - Prettier formatter is a good VS extension.
+  - Bracket pair colorizer is also a nice one.
