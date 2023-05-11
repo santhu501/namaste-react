@@ -64,7 +64,13 @@ const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
-      <div className="restaurant-container">
+      <div className="restaurantContainer">
+        <RestaurantContainer/>
+        <RestaurantContainer/>
+        <RestaurantContainer/>
+        <RestaurantContainer/>
+        <RestaurantContainer/>
+        <RestaurantContainer/>
         <RestaurantContainer/>
       </div>
     </div>
