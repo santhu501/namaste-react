@@ -47,31 +47,38 @@ const styleInline = {
 // We can write directly like below for style.
 // <div className="restaurantCard" style={{ backgroundColor: "orange"}}>
 
-const RestaurantContainer = () => {
+const RestaurantContainer = (props) => {
+  const { resName, cuisine } = props; // object destructuring.
   return (
     <div className="restaurantCard" style={styleInline}>
       <img className="resLogo" alt="Biryani express" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMpvnHubl7w0TtmNL1yf7l7CsoOpuz_ahJIZBC-nLHjytRIWRdfSIdONvH0i79uJ32o1o&usqp=CAU"></img>
-      <h3> Your authentic biryani</h3>
-      <h4> Indian, Chinese</h4>
+      <h3> {resName}</h3>
+      <h4> {cuisine}</h4>
       <h4> 4.5 stars </h4>
       <h4> 30 minutes </h4>
     </div>
   );
 };
 
+const resList = [
+  {
+    resName: "Your Authentic Biryani",
+    cuisine: "Indian, Chinese"
+  },
+  {
+    resName: "Your Next Biryani",
+    cuisine: "Indian, Chinese, Thai"
+  }
+];
+
 
 const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
-      <div className="restaurantContainer">
-        <RestaurantContainer/>
-        <RestaurantContainer/>
-        <RestaurantContainer/>
-        <RestaurantContainer/>
-        <RestaurantContainer/>
-        <RestaurantContainer/>
-        <RestaurantContainer/>
+      <div className="restaurantContainer">             
+        {resList.map( ( restaurant ) => ( < RestaurantContainer resName={restaurant.resName} cuisine={restaurant.cuisine} /> )      
+        )}
       </div>
     </div>
   );
