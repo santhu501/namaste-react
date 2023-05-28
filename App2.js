@@ -62,10 +62,12 @@ const RestaurantContainer = (props) => {
 
 const resList = [
   {
+    id: 1,
     resName: "Your Authentic Biryani",
     cuisine: "Indian, Chinese"
   },
   {
+    id: 2,
     resName: "Your Next Biryani",
     cuisine: "Indian, Chinese, Thai"
   }
@@ -77,7 +79,7 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="restaurantContainer">             
-        {resList.map( ( restaurant ) => ( < RestaurantContainer resName={restaurant.resName} cuisine={restaurant.cuisine} /> )      
+        {resList.map( ( restaurant ) => ( < RestaurantContainer key={restaurant.id} resName={restaurant.resName} cuisine={restaurant.cuisine} /> )      
         )}
       </div>
     </div>
