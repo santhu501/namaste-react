@@ -74,6 +74,9 @@ const resList = [
 ];
 
 
+// When we keep components in a loop, each component should have a unique key. 
+// Without a unique key, react cannot uniquely differentiate a component. If we add few more restaurants, react will re-render all components again which is a performance issue.
+
 const Body = () => {
   return (
     <div className="body">
