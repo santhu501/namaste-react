@@ -76,6 +76,7 @@ const resList = [
 
 // When we keep components in a loop, each component should have a unique key. 
 // Without a unique key, react cannot uniquely differentiate a component. If we add few more restaurants, react will re-render all components again which is a performance issue.
+// React does not recommented us to use loop index as the key like 0, 1, 2 etc. resList.map( (restaurant, index) => () ). if the order of restaurants can change, it will be an issue. A unique key is always a best approach.
 
 const Body = () => {
   return (
