@@ -4,13 +4,28 @@ import RestaurantContainer from "./RestaurantContainer";
   const resList = [
     {
       id: 1,
-      resName: "Your Authentic Biryani",
+      resName: "Biryani Palace",
       cuisine: "Indian, Chinese"
     },
     {
       id: 2,
-      resName: "Your Next Biryani",
+      resName: "Biryani Pot",
       cuisine: "Indian, Chinese, Thai"
+    },
+    {
+        id: 3,
+        resName: "Aahar Biryani",
+        cuisine: "Indian, Japanese"
+    },
+    {
+        id: 4,
+        resName: "Signature Biryani",
+        cuisine: "Indian, Thai"
+    },
+    {
+        id: 5,
+        resName: "Your Authentic Biryani",
+        cuisine: "Indian, Chinese, Thai"
     }
   ];
 
