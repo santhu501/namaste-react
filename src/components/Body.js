@@ -43,6 +43,7 @@ const Body = () => {
       ];
     let [resList, setResList] = useState(resListData);
     // a set variable next to the react state variable is required to modify the resList. name can be anything for setter but convention is to use set with same variable name.
+    // when a state variable changes, react will re-render the component.
     return (
       <div className="body">
         <div className="search">Search</div>

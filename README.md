@@ -29,3 +29,7 @@
 
 export const component;
 import {component} from "path";
+
+
+ - A react hook is a just a normal JS function given by react library.
+ - A state update will re-render the component.
