@@ -16,3 +16,16 @@
  *  - Address
  *  - Contact
  */
+
+
+ Two types of export/import.
+
+ - default export/import
+
+ export default Component;
+ import Component from "path";
+
+- named export/import
+
+export const component;
+import {component} from "path";
