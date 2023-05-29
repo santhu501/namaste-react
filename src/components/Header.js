@@ -1,3 +1,5 @@
+import { HEADER_LOGO_URL } from "../utils/constants";
+
 const Header = () => {
     return (
       <div className="header">
@@ -5,7 +7,7 @@ const Header = () => {
           <img
             className="logo"
             alt="Only for Practise"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaA7cCWhRNuAOOzw0YRD2O_xi9CCMOQyKYUfuJbObF7uesA_aaQYq5IjhaN73aeav9WYw&usqp=CAU"
+            src={HEADER_LOGO_URL}
           />
         </div>
         <div className="nav-items">
