@@ -5,27 +5,32 @@ import RestaurantContainer from "./RestaurantContainer";
     {
       id: 1,
       resName: "Biryani Palace",
-      cuisine: "Indian, Chinese"
+      cuisine: "Indian, Chinese",
+      rating: 4.5
     },
     {
       id: 2,
       resName: "Biryani Pot",
-      cuisine: "Indian, Chinese, Thai"
+      cuisine: "Indian, Chinese, Thai",
+      rating: 4.1
     },
     {
         id: 3,
         resName: "Aahar Biryani",
-        cuisine: "Indian, Japanese"
+        cuisine: "Indian, Japanese",
+        rating: 3.9
     },
     {
         id: 4,
         resName: "Signature Biryani",
-        cuisine: "Indian, Thai"
+        cuisine: "Indian, Thai",
+        rating: 3.5
     },
     {
         id: 5,
         resName: "Your Authentic Biryani",
-        cuisine: "Indian, Chinese, Thai"
+        cuisine: "Indian, Chinese, Thai",
+        rating: 3.7
     }
   ];
 
@@ -39,7 +44,7 @@ const Body = () => {
       <div className="body">
         <div className="search">Search</div>
         <div className="restaurantContainer">             
-          {resList.map( ( restaurant ) => ( < RestaurantContainer key={restaurant.id} resName={restaurant.resName} cuisine={restaurant.cuisine} /> )      
+          {resList.map( ( restaurant ) => ( < RestaurantContainer key={restaurant.id} resName={restaurant.resName} cuisine={restaurant.cuisine} rating={restaurant.rating}/> )      
           )}
         </div>
       </div>
