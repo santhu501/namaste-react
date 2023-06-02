@@ -41,3 +41,14 @@ import {component} from "path";
  virtual DOM is not a new concept, it was there from a long time. Its a javascript object representation of real DOM. React made use of this concept and updates DOM efficiently.
 
  https://github.com/acdlite/react-fiber-architecture
+
+
+ const[ listOfRest, setListOfRest ] = useState(resList);
+ useState returns an array. all we are doing in the above line is array destructuring.
+
+ something like below:
+
+ const arr = useState(resList);
+
+ const listOfRest = arr[0];
+ const setListOfRest = new updated array list that we are trying to set.
