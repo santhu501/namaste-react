@@ -9,43 +9,7 @@ import { useState, useEffect } from "react";
 
 
 const Body = () => {
-    let resListData = [
-        {
-          id: 1,
-          resName: "Biryani Palace",
-          cuisine: "Indian, Chinese",
-          rating: 4.5,
-          logo: ""
-        },
-        {
-          id: 2,
-          resName: "Biryani Pot",
-          cuisine: "Indian, Chinese, Thai",
-          rating: 4.1,
-          logo: ""
-        },
-        {
-            id: 3,
-            resName: "Aahar Biryani",
-            cuisine: "Indian, Japanese",
-            rating: 3.9,
-            logo: ""
-        },
-        {
-            id: 4,
-            resName: "Signature Biryani",
-            cuisine: "Indian, Thai",
-            rating: 3.5,
-            logo: ""
-        },
-        {
-            id: 5,
-            resName: "Your Authentic Biryani",
-            cuisine: "Indian, Chinese, Thai",
-            rating: 3.7,
-            logo: ""
-        }
-      ];
+    
     let [resList, setResList] = useState([]);
     
     // a set variable next to the react state variable is required to modify the resList. name can be anything for setter but convention is to use set with same variable name.
@@ -86,6 +50,7 @@ const Body = () => {
               cuisine={restaurant.data.cusines}
               rating={restaurant.data.avgRating}
               logo={restaurant.data.cloudinaryImageId}
+              deliveryTime={restaurant.data.deliveryTime}
             />
           ))}
         </div>
