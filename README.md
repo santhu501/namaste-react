@@ -52,3 +52,5 @@ import {component} from "path";
 
  const listOfRest = arr[0];
  const setListOfRest = new updated array list that we are trying to set.
+
+ - React hooks are just normal Javascript functions.

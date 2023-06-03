@@ -6,10 +6,10 @@ const styleInline = {
   // <div className="restaurantCard" style={{ backgroundColor: "orange"}}>
   
   const RestaurantContainer = (props) => {
-    const { resName, cuisine, rating } = props; // object destructuring.
+    const { resName, cuisine, rating, logo } = props; // object destructuring.
     return (
       <div className="restaurantCard" style={styleInline}>
-        <img className="resLogo" alt="Biryani express" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMpvnHubl7w0TtmNL1yf7l7CsoOpuz_ahJIZBC-nLHjytRIWRdfSIdONvH0i79uJ32o1o&usqp=CAU"></img>
+        <img className="resLogo" alt={resName} src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + logo}></img>
         <h3> {resName}</h3>
         <h4> {cuisine}</h4>
         <h4> {rating} stars </h4>
