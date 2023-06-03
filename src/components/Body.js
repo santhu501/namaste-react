@@ -1,6 +1,7 @@
 
 import RestaurantContainer from "./RestaurantContainer";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 
 // When we keep components in a loop, each component should have a unique key. 
@@ -34,7 +35,7 @@ const Body = () => {
 
    if( resList.length === 0 )
    {
-    return <h1>Loading......... </h1>
+    return <Shimmer />;
    }
 
     return (
