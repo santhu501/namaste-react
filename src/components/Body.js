@@ -47,7 +47,7 @@ const Body = () => {
             </input> 
             <button
               onClick={() => {
-                const searchOutputOfRestaurants = resList.filter((res) => res.data.name.includes(searchText));
+                const searchOutputOfRestaurants = resList.filter((res) => res.data.name.toLowerCase().includes(searchText.toLowerCase()));
                 setResList( searchOutputOfRestaurants );
               }}
             >Search</button>
