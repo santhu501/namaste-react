@@ -12,6 +12,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
     
     let [resList, setResList] = useState([]);
+    let [filteredResList, setFilteredResList] = useState([]);
     const [searchText, setSearchText] = useState("");
 
     console.log(searchText);
@@ -33,6 +34,7 @@ const Body = () => {
     
     const newResList = json?.data?.cards[2]?.data?.data?.cards;   // optional chaining    
     setResList(newResList);
+    setFilteredResList(newResList);
    }
 
    // Condtional rendering.
@@ -48,7 +50,7 @@ const Body = () => {
             <button
               onClick={() => {
                 const searchOutputOfRestaurants = resList.filter((res) => res.data.name.toLowerCase().includes(searchText.toLowerCase()));
-                setResList( searchOutputOfRestaurants );
+                setFilteredResList( searchOutputOfRestaurants );
               }}
             >Search</button>
           </div>
@@ -61,7 +63,7 @@ const Body = () => {
           </button>
         </div>
         <div className="restaurantContainer">
-          {resList.map((restaurant) => (
+          {filteredResList.map((restaurant) => (
             <RestaurantContainer
               key={restaurant.data.uuid}
               resName={restaurant.data.name}
