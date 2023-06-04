@@ -70,3 +70,7 @@
     padding: 0px20px;
     cursor: pointer;
 }
+
+.filter{
+    display:flex;
+}

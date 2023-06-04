@@ -12,6 +12,9 @@ import Shimmer from "./Shimmer";
 const Body = () => {
     
     let [resList, setResList] = useState([]);
+    const [searchText, setSearchText] = useState("");
+
+    console.log(searchText);
     
     // a set variable next to the react state variable is required to modify the resList. name can be anything for setter but convention is to use set with same variable name.
     // when a state variable changes, react will re-render the component.
@@ -28,16 +31,27 @@ const Body = () => {
     const json = await data.json();    
 
     
-    const newResList = json?.data?.cards[2]?.data?.data?.cards;   // optional chaining
-    console.log(newResList);
+    const newResList = json?.data?.cards[2]?.data?.data?.cards;   // optional chaining    
     setResList(newResList);
    }
 
    // Condtional rendering.
     return resList.length === 0 ? <Shimmer /> : (
-      <div className="body">
-        <div className="search">Search</div>
+      <div className="body">      
         <div className="filter">
+          <div className="search">
+            <input type="text" value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}>
+            </input> 
+            <button
+              onClick={() => {
+                const searchOutputOfRestaurants = resList.filter((res) => res.data.name.includes(searchText));
+                setResList( searchOutputOfRestaurants );
+              }}
+            >Search</button>
+          </div>
           <button className="filter-button" 
             onClick={() => {
                 resList = resList.filter( res => res.data.avgRating > 4 );
