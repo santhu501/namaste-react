@@ -33,12 +33,8 @@ const Body = () => {
     setResList(newResList);
    }
 
-   if( resList.length === 0 )
-   {
-    return <Shimmer />;
-   }
-
-    return (
+   // Condtional rendering.
+    return resList.length === 0 ? <Shimmer /> : (
       <div className="body">
         <div className="search">Search</div>
         <div className="filter">
