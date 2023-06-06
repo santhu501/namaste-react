@@ -54,3 +54,10 @@ import {component} from "path";
  const setListOfRest = new updated array list that we are trying to set.
 
  - React hooks are just normal Javascript functions.
+
+ useEffect: 
+ useEffect( () => {}, [] );
+ - useEffect takes a callback function and a dependency array.
+ - dependency array is optional. if dependency array is not given, useEffect is called for every render of component. 
+ - If empty array is given for dependency array, useEffect is called only once after initial render of component.
+ 
