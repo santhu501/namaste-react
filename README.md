@@ -60,4 +60,5 @@ import {component} from "path";
  - useEffect takes a callback function and a dependency array.
  - dependency array is optional. if dependency array is not given, useEffect is called for every render of component. 
  - If empty array is given for dependency array, useEffect is called only once after initial render of component.
+ - If something(var) is mentioned inside dependency array, then useEffect is called only when var is updated.
  
