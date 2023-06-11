@@ -61,4 +61,7 @@ import {component} from "path";
  - dependency array is optional. if dependency array is not given, useEffect is called for every render of component. 
  - If empty array is given for dependency array, useEffect is called only once after initial render of component.
  - If something(var) is mentioned inside dependency array, then useEffect is called only when var is updated.
+
+
+ Link: Use Link component instead of anchor tag to show the pages. A Link will just render that component only but using anchor to go to new page will reload the whole page.
  
