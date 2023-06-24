@@ -2,6 +2,7 @@
 import RestaurantContainer from "./RestaurantContainer";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import {Link} from 'react-router-dom';
 
 
 // When we keep components in a loop, each component should have a unique key. 
@@ -35,6 +36,7 @@ const Body = () => {
     const newResList = json?.data?.cards[2]?.data?.data?.cards;   // optional chaining    
     setResList(newResList);
     setFilteredResList(newResList);
+    console.log(newResList);
    }
 
    // Condtional rendering.
@@ -63,15 +65,16 @@ const Body = () => {
           </button>
         </div>
         <div className="restaurantContainer">
-          {filteredResList.map((restaurant) => (
-            <RestaurantContainer
-              key={restaurant.data.uuid}
+          {filteredResList.map((restaurant) => (            
+            <Link to={"/restaurants/" + restaurant.data.id} key={restaurant.data.uuid}>
+            <RestaurantContainer              
               resName={restaurant.data.name}
               cuisine={restaurant.data.cusines}
               rating={restaurant.data.avgRating}
               logo={restaurant.data.cloudinaryImageId}
               deliveryTime={restaurant.data.deliveryTime}
             />
+            </Link>
           ))}
         </div>
       </div>
