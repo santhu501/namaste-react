@@ -75,6 +75,6 @@ html with new data.
 component did update.
 
 --------- Final -------------------
-component will unmount
+component will unmount - this will be called once we move to some other page.
 
 */
