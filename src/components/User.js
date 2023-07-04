@@ -11,7 +11,7 @@ const User = (props) => {
             <h3>Location: Michigan </h3>
             <h4>Contact: santhosh501</h4>
             <h4>Count: {count}</h4>
-            <h4>Count2: {count2}</h4>
+            <h4>Fixed Count: {count2}</h4>
         </div>
     );
 }

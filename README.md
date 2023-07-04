@@ -64,4 +64,10 @@ import {component} from "path";
 
 
  Link: Use Link component instead of anchor tag to show the pages. A Link will just render that component only but using anchor to go to new page will reload the whole page.
+
+ React Class Based Components life cycle: First constructor is called, next render method and then componentDidMount method is called.
+ When there is a child class component under parent class component: sequence of things that will be executed: 
+ parent constructor, parent render, 
+ child constructor, child render, child componentDidMount, 
+ parent componentDidMount are called.
  
