@@ -35,6 +35,7 @@ class UserClassComp extends React.Component {
         const {name, location} = this.state.userDetails;        
 
        // console.log("child class render");
+       //debugger;
 
         return (
             <div className="user-card">
