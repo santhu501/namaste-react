@@ -65,9 +65,16 @@ import {component} from "path";
 
  Link: Use Link component instead of anchor tag to show the pages. A Link will just render that component only but using anchor to go to new page will reload the whole page.
 
- React Class Based Components life cycle: First constructor is called, next render method and then componentDidMount( same as useEffect in functional components) method is called.
- When there is a child class component under parent class component: sequence of things that will be executed: 
+ - React Class Based Components life cycle: First constructor is called, next render method and then componentDidMount( same as useEffect in functional components) method is called.
+ - When there is a child class component under parent class component: sequence of things that will be executed: 
  parent constructor, parent render, 
  child constructor, child render, child componentDidMount, 
  parent componentDidMount are called.
+
+- when there are two child components one after the other under one parent class component:
+parent constructor, parent render, child 1 constructor, child 1 render, child 2 constructor, child 2 render, DOM updates in a batch,
+child 1 component did mount, child 2 component did mount, then finally parent component did mount are called.
+
+- When there are multiple child components, react will optimize render cycle and commit phase( componentDidMount ) by doing them in a batch.
+
  
