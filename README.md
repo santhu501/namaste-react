@@ -95,4 +95,14 @@ component did update.
 
 --------- Final -------------------
 component will unmount
+
+
+
+componentDidMount is called only after initial render.
+componentDidUpdate is called from second render to all subsequent renders.
+
+useEffect comes with a return function which will be called when component is unmounted. This is similar to componentWillUnmount in class component method.
+useEffect(() =>{
+    return(()=>{});
+ });
  
