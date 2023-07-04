@@ -29,6 +29,14 @@ class UserClassComp extends React.Component {
 
     }
 
+    componentDidUpdate(){
+        //console.log("component did update");
+    }
+
+
+    componentWillUnmount(){
+        // console.log("component will unmount");
+    }
 
     render(){
 
@@ -49,3 +57,24 @@ class UserClassComp extends React.Component {
 }
 
 export default UserClassComp;
+
+
+/** 
+------------- MOUNTING ---------------
+constructor with default data
+render with default data
+html with default data
+Component did mount
+API call.
+this.setState -> state variable is updated.
+
+-------------- UPDATE -----------------
+
+render with api data
+html with new data.
+component did update.
+
+--------- Final -------------------
+component will unmount
+
+*/

@@ -77,4 +77,22 @@ child 1 component did mount, child 2 component did mount, then finally parent co
 
 - When there are multiple child components, react will optimize render cycle and commit phase( componentDidMount ) by doing them in a batch.
 
+About us page with user class component - react life cycle.
+
+------------- MOUNTING ---------------
+constructor with default data
+render with default data
+html with default data
+Component did mount
+API call.
+this.setState -> state variable is updated.
+
+-------------- UPDATE -----------------
+
+render with api data
+html with new data.
+component did update.
+
+--------- Final -------------------
+component will unmount
  
