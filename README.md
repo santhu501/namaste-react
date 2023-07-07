@@ -1,5 +1,25 @@
 # namaste react series
 
+
+#Parcel
+- Dev Build
+- Local Server
+- HMR -> Hot Module Replacement
+- File Watching Algorithm - written in c++
+- Caching - Faster Builds
+- Image Optimization
+- Minification
+- Bundling
+- Compress
+- Consistent Hashing
+- Code Splitting
+- Differential Bundling - Supports older browsers
+- Diagnostics
+- Error Handling
+- HTTPS
+- Tree Shaking - Remove unused code.
+- Different dev and production bundles.
+
 /**
  * Header
  *  - Logo
