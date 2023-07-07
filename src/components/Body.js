@@ -3,6 +3,7 @@ import RestaurantContainer from "./RestaurantContainer";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom';
+import useOnlineStatus from "./useOnlineStatus"
 
 
 // When we keep components in a loop, each component should have a unique key. 
@@ -37,6 +38,12 @@ const Body = () => {
     setResList(newResList);
     setFilteredResList(newResList);
     console.log(newResList);
+   }
+
+   const onlineStatus = useOnlineStatus();
+
+   if(onlineStatus === false){
+    return( <h1>Your internet seems to be disconnected, please check back again later.</h1> );
    }
 
    // Condtional rendering.
