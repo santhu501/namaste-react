@@ -128,4 +128,4 @@ useEffect(() =>{
  
 
 // There are different names used for bundling an app to make sure it loads only the code needed and not everything. 
-Names: Chunking, Code Spliting, Dynamic Bundling, Lazy Loading, on Demand Loading etc.
+Names: Chunking, Code Spliting, Dynamic Bundling, Lazy Loading, on Demand Loading, dynamic import etc.
