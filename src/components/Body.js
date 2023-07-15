@@ -49,29 +49,31 @@ const Body = () => {
    // Condtional rendering.
     return resList.length === 0 ? <Shimmer /> : (
       <div className="body">      
-        <div className="filter">
-          <div className="search">
-            <input type="text" value={searchText}
+        <div className="filter flex">
+          <div className="search m-4 p-4">
+            <input type="text" className="border border-solid border-black" value={searchText}
               onChange={(e) => {
                 setSearchText(e.target.value);
               }}>
             </input> 
-            <button
+            <button className="px-4 py-1 bg-orange-500 m-4 rounded-lg"
               onClick={() => {
                 const searchOutputOfRestaurants = resList.filter((res) => res.data.name.toLowerCase().includes(searchText.toLowerCase()));
                 setFilteredResList( searchOutputOfRestaurants );
               }}
             >Search</button>
           </div>
-          <button className="filter-button" 
+          <div className="search m-4 p-4 flex items-center">
+          <button className="px-4 py-1 bg-orange-500 m-4 rounded-lg"
             onClick={() => {
                 resList = resList.filter( res => res.data.avgRating > 4 );
                 setResList( resList );
                 }}>
             Top Rated Restaurants
           </button>
+          </div>          
         </div>
-        <div className="restaurantContainer">
+        <div className="flex flex-wrap">
           {filteredResList.map((restaurant) => (            
             <Link to={"/restaurants/" + restaurant.data.id} key={restaurant.data.uuid}>
             <RestaurantContainer              
