@@ -6,8 +6,9 @@ import useOnlineStatus from "./useOnlineStatus";
 const Header = () => {
   const [ btnName, setBtnName ] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  // we can use device specific colors ( media queries based on tablet or mobile or laptop) using sm(devices greater than small) lg( devices greater than larger).
     return (
-      <div className="flex justify-between bg-orange-200">
+      <div className="flex justify-between bg-green-200 sm:bg-pink-200 lg:bg-orange-200">
         <div className="logo-container">
           <img
             className="w-56"
