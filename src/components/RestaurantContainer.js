@@ -11,4 +11,17 @@
     );
   };
 
+  // Higher order component - A function that takes component as input and returns functional component as output.
+
+  export const withPromotedLabel = (RestaurantContainer) => {
+    return (props) => {
+      return (
+        <div>
+          <label>Promoted</label>
+          <RestaurantContainer {...props}/>
+        </div>
+      );
+    }
+  }
+
   export default RestaurantContainer;

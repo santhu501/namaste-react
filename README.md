@@ -129,3 +129,5 @@ useEffect(() =>{
 
 // There are different names used for bundling an app to make sure it loads only the code needed and not everything. 
 Names: Chunking, Code Spliting, Dynamic Bundling, Lazy Loading, on Demand Loading, dynamic import etc.
+
+// HOC - Higher Order Components. A function that takes Component as input and returns functional component as output.

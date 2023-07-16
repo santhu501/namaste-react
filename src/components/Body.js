@@ -1,5 +1,5 @@
 
-import RestaurantContainer from "./RestaurantContainer";
+import RestaurantContainer, { withPromotedLabel } from "./RestaurantContainer";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom';
@@ -17,7 +17,7 @@ const Body = () => {
     let [filteredResList, setFilteredResList] = useState([]);
     const [searchText, setSearchText] = useState("");
 
-    console.log(searchText);
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantContainer);
     
     // a set variable next to the react state variable is required to modify the resList. name can be anything for setter but convention is to use set with same variable name.
     // when a state variable changes, react will re-render the component.
@@ -76,13 +76,23 @@ const Body = () => {
         <div className="flex flex-wrap">
           {filteredResList.map((restaurant) => (            
             <Link to={"/restaurants/" + restaurant.data.id} key={restaurant.data.uuid}>
-            <RestaurantContainer              
-              resName={restaurant.data.name}
-              cuisine={restaurant.data.cusines}
-              rating={restaurant.data.avgRating}
-              logo={restaurant.data.cloudinaryImageId}
-              deliveryTime={restaurant.data.deliveryTime}
-            />
+             {
+              restaurant?.data?.promoted? ( <RestaurantCardPromoted              
+                resName={restaurant.data.name}
+                cuisine={restaurant.data.cusines}
+                rating={restaurant.data.avgRating}
+                logo={restaurant.data.cloudinaryImageId}
+                deliveryTime={restaurant.data.deliveryTime}
+              /> ): 
+              (<RestaurantContainer              
+                resName={restaurant.data.name}
+                cuisine={restaurant.data.cusines}
+                rating={restaurant.data.avgRating}
+                logo={restaurant.data.cloudinaryImageId}
+                deliveryTime={restaurant.data.deliveryTime}
+              />)
+             } 
+            
             </Link>
           ))}
         </div>
