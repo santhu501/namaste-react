@@ -34,7 +34,7 @@ const Body = () => {
     const json = await data.json();    
 
     
-    const newResList = json?.data?.cards[2]?.data?.data?.cards;   // optional chaining    
+    const newResList = json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;   // optional chaining    
     setResList(newResList);
     setFilteredResList(newResList);
     console.log(newResList);
@@ -47,7 +47,7 @@ const Body = () => {
    }
 
    // Condtional rendering.
-    return resList.length === 0 ? <Shimmer /> : (
+    return resList?.length === 0 ? <Shimmer /> : (
       <div className="body">      
         <div className="filter flex">
           <div className="search m-4 p-4">
@@ -58,7 +58,7 @@ const Body = () => {
             </input> 
             <button className="px-4 py-1 bg-orange-500 m-4 rounded-lg"
               onClick={() => {
-                const searchOutputOfRestaurants = resList.filter((res) => res.data.name.toLowerCase().includes(searchText.toLowerCase()));
+                const searchOutputOfRestaurants = resList.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                 setFilteredResList( searchOutputOfRestaurants );
               }}
             >Search</button>
@@ -66,8 +66,9 @@ const Body = () => {
           <div className="search m-4 p-4 flex items-center">
           <button className="px-4 py-1 bg-orange-500 m-4 rounded-lg"
             onClick={() => {
-                resList = resList.filter( res => res.data.avgRating > 4 );
+                resList = resList.filter( res => res.info.avgRating > 4 );
                 setResList( resList );
+                setFilteredResList( resList );
                 }}>
             Top Rated Restaurants
           </button>
@@ -75,7 +76,7 @@ const Body = () => {
         </div>
         <div className="flex flex-wrap">
           {filteredResList.map((restaurant) => (            
-            <Link to={"/restaurants/" + restaurant.data.id} key={restaurant.data.uuid}>
+            <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}>
              {
               restaurant?.data?.promoted? ( <RestaurantCardPromoted              
                 resName={restaurant.data.name}
@@ -85,11 +86,11 @@ const Body = () => {
                 deliveryTime={restaurant.data.deliveryTime}
               /> ): 
               (<RestaurantContainer              
-                resName={restaurant.data.name}
-                cuisine={restaurant.data.cusines}
-                rating={restaurant.data.avgRating}
-                logo={restaurant.data.cloudinaryImageId}
-                deliveryTime={restaurant.data.deliveryTime}
+                resName={restaurant.info.name}
+                cuisine={restaurant.info.cusines}
+                rating={restaurant.info.avgRating}
+                logo={restaurant.info.cloudinaryImageId}
+                deliveryTime={restaurant.info.deliveryTime}
               />)
              } 
             
