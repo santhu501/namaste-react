@@ -131,3 +131,5 @@ useEffect(() =>{
 Names: Chunking, Code Spliting, Dynamic Bundling, Lazy Loading, on Demand Loading, dynamic import etc.
 
 // HOC - Higher Order Components. A function that takes Component as input and returns functional component as output.
+
+// http://localhost:1234/restaurants/56589  - To see different sections for restaturant like recommended, newly added etc.
