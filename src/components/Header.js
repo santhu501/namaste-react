@@ -1,11 +1,16 @@
 import { HEADER_LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {Link} from 'react-router-dom';
 import useOnlineStatus from "./useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [ btnName, setBtnName ] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const {loggedInUser} = useContext(UserContext);
+
+ 
+
   // we can use device specific colors ( media queries based on tablet or mobile or laptop) using sm(devices greater than small) lg( devices greater than larger).
     return (
       <div className="flex justify-between bg-green-200 sm:bg-pink-200 lg:bg-orange-200">
@@ -40,6 +45,7 @@ const Header = () => {
               }}>
                 {btnName}
               </button>
+              <li className="px-3 font-bold">{loggedInUser}</li>
           </ul>
         </div>
       </div>
