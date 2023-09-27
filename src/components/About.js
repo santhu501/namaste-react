@@ -20,10 +20,9 @@ class About extends React.Component{
         return (
             <div>
                 <h1>About</h1>
-                <div>
-                    LoggedIn User
-                    <UserContext.Consumer>
-                    {(data) => {data.loggedInUser}}    
+                <div>                    
+                    <UserContext.Consumer>                    
+                    {({loggedInUser}) => <h1>LoggedIn User: {loggedInUser}</h1>}   
                     </UserContext.Consumer>
                 </div>
                 <h2>This is about us page </h2>
