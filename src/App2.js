@@ -25,9 +25,9 @@ const AppLayout = () => {
 
     return (
         // UserContext.Provider will give access to usecontext for the components inside it and we can also update the value of a usecontext.
-        <UserContext.Provider value={{loggedInUser: userName}}>
+        <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
         <div className="app">
-        <UserContext.Provider value={{loggedInUser: "SanthoshHeader"}}>
+        <UserContext.Provider value={{loggedInUser: userName + "Header"}}>
         <Header/>
         </UserContext.Provider>
         <Outlet/>

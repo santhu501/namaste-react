@@ -1,9 +1,10 @@
 
 import RestaurantContainer, { withPromotedLabel } from "./RestaurantContainer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom';
 import useOnlineStatus from "./useOnlineStatus"
+import UserContext from "../utils/UserContext";
 
 
 // When we keep components in a loop, each component should have a unique key. 
@@ -46,6 +47,8 @@ const Body = () => {
     return( <h1>Your internet seems to be disconnected, please check back again later.</h1> );
    }
 
+   const {loggedInUser, setUserName} = useContext(UserContext);
+
    // Condtional rendering.
     return resList?.length === 0 ? <Shimmer /> : (
       <div className="body">      
@@ -72,6 +75,13 @@ const Body = () => {
                 }}>
             Top Rated Restaurants
           </button>
+          </div>
+          <div className="search m-4 p-4 flex items-center">
+            <label>UserName: </label>
+            <input className="border border-black p-2" value={loggedInUser} 
+            onChange={
+              (e)=> setUserName(e?.target?.value)
+              }/>
           </div>          
         </div>
         <div className="flex flex-wrap">
