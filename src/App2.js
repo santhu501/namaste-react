@@ -8,6 +8,8 @@ import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom';
 import UserContext from './utils/UserContext';
+import {Provider} from 'react-redux';
+import appStore from './utils/appStore';
 //import Grocery from './components/Grocery';
 
 const Grocery = lazy(() => import("/src/components/Grocery"));
@@ -23,8 +25,10 @@ const AppLayout = () => {
         setUserName(data.name);
     },[]);
 
+    // UserContext.Provider will give access to usecontext for the components inside it and we can also update the value of a usecontext.
     return (
-        // UserContext.Provider will give access to usecontext for the components inside it and we can also update the value of a usecontext.
+        <Provider store={appStore}>
+        
         <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
         <div className="app">
         <UserContext.Provider value={{loggedInUser: userName + "Header"}}>
@@ -33,6 +37,7 @@ const AppLayout = () => {
         <Outlet/>
         </div>
         </UserContext.Provider>
+        </Provider>
     );
 }
 

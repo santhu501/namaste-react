@@ -133,3 +133,12 @@ Names: Chunking, Code Spliting, Dynamic Bundling, Lazy Loading, on Demand Loadin
 // HOC - Higher Order Components. A function that takes Component as input and returns functional component as output.
 
 // http://localhost:1234/restaurants/56589  - To see different sections for restaturant like recommended, newly added etc.
+
+
+# Redux ToolKit 
+  - Install @reduxjs/toolkit and react-redux libraries.
+  - Build our redux store.
+  - Connect our store to our app.
+  - Create Slice (cartSlice)
+  - dispatch(action) which calls reducer to update the information in redux store for cart slice.
+  - Selector subscribes to the changes to cart slice in redux store and updates the cart slice.

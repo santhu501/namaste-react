@@ -3,12 +3,16 @@ import { useState, useContext } from "react";
 import {Link} from 'react-router-dom';
 import useOnlineStatus from "./useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [ btnName, setBtnName ] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const {loggedInUser} = useContext(UserContext);
 
+  // Subscribing to the redux store using a selector.
+  // selector is used to read the contents from the redux store.
+  const cartItems = useSelector((store) => store.cart.items);
  
 
   // we can use device specific colors ( media queries based on tablet or mobile or laptop) using sm(devices greater than small) lg( devices greater than larger).
@@ -38,7 +42,7 @@ const Header = () => {
             <li className="px-3">
               <Link to="/grocery">Grocery</Link>
             </li>
-            <li className="px-3">Cart</li>
+            <li className="px-3 font-bold">Cart - {cartItems.length} Items </li>
               <button className="Login"
               onClick={() => {
                 btnName === "Login" ? setBtnName("Logout"): setBtnName("Login");
