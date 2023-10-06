@@ -142,3 +142,13 @@ Names: Chunking, Code Spliting, Dynamic Bundling, Lazy Loading, on Demand Loadin
   - Create Slice (cartSlice)
   - dispatch(action) which calls reducer to update the information in redux store for cart slice.
   - Selector subscribes to the changes to cart slice in redux store and updates the cart slice.
+
+
+Older Vanilla Redux => Does not allow state mutation at all.
+we need to do this way to update state:
+const newState = [...state];
+newState.item.push(action.payload);
+return newState.
+
+In redux toolkit, you should directly mutate the state, thats the only way to update state
+state.items.push(action.payload);
