@@ -150,5 +150,5 @@ const newState = [...state];
 newState.item.push(action.payload);
 return newState.
 
-In redux toolkit, you should directly mutate the state, thats the only way to update state
+In redux toolkit, you should directly mutate the state, thats the only way to update state. Redux toolkit behind the scenes use immer js library and does the immutable state thing like vanilla redux. This is done to reduce work on developers.
 state.items.push(action.payload);
