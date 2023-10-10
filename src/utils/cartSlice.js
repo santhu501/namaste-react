@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -14,7 +14,10 @@ const cartSlice = createSlice({
             state.items.pop();
         },
         clearCart: (state) => {
-            state.items.length = 0;
+            state.items.length = 0; // or state.items = [];  
+            // To print the state on console in a redux toolkit, we have to use current method.
+            // console.log(current(state));
+            // using console.log(state); will only print proxy object without actual state object.
         }
     }
 });
