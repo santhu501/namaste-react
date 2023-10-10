@@ -19,7 +19,7 @@ const cartSlice = createSlice({
             // console.log(current(state));
             // using console.log(state); will only print proxy object without actual state object.
             // Redux toolkit requires mutating the existing state or return a new state.
-            // return [];  this will also clear the cart.
+            // return { items: [] };  this will also clear the cart.
         }
     }
 });
