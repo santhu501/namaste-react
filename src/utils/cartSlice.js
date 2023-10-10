@@ -18,6 +18,8 @@ const cartSlice = createSlice({
             // To print the state on console in a redux toolkit, we have to use current method.
             // console.log(current(state));
             // using console.log(state); will only print proxy object without actual state object.
+            // Redux toolkit requires mutating the existing state or return a new state.
+            // return [];  this will also clear the cart.
         }
     }
 });
