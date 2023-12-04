@@ -152,3 +152,17 @@ return newState.
 
 In redux toolkit, you should directly mutate the state, thats the only way to update state. Redux toolkit behind the scenes use immer js library and does the immutable state thing like vanilla redux. This is done to reduce work on developers.
 state.items.push(action.payload);
+
+# Types of testing( developer)
+ - Unit Testing - Testing a component or a function in isolation.
+ - Integration Testing  - Testing interconnected components.
+ - End to End Testing 
+
+# Testing Libraries: 
+ React testing library - This library uses Jest.
+ npm install -D @testing-library/react
+ npm install -D jest
+
+ we are using babel in this project. Jest requires installing some more dependencies for babel. It also requires some config. babel.config.js
+  Information available here - https://jestjs.io/docs/getting-started
+ npm install --save-dev babel-jest @babel/core @babel/preset-env
