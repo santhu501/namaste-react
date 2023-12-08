@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.23.5",

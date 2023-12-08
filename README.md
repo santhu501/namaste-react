@@ -166,3 +166,18 @@ state.items.push(action.payload);
  we are using babel in this project. Jest requires installing some more dependencies for babel. It also requires some config. babel.config.js
   Information available here - https://jestjs.io/docs/getting-started
  npm install --save-dev babel-jest @babel/core @babel/preset-env
+
+ # Setting up testing in our app
+ - Installed React testing library
+ - installed Jest
+ - Installed Babel dependencies
+ - Configured Babel
+ - Configure parcel config file (.parcelrc) to disable default babel transpilation - https://parceljs.org/languages/javascript/#usage-with-other-tools
+ - Jest Configuration.  npx jest --init  . ( npx is to execute)
+      - it asks questions like below. 
+      - For typescript say no.
+      - For test environment - select jsdom(browser-like).
+      - for add coverage - say yes. 
+      - For provider name - select babel.
+      - For automatically clear mock calls - say yes.
+      this will now create a jest.config.js file.
