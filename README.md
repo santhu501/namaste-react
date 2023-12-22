@@ -186,3 +186,8 @@ state.items.push(action.payload);
     
 when we use __tests__ -> two underscores format is called dunder.
 when we run -> npm run test, it looks for files with this regex -> **/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)
+
+ - JSX should be enabled for test cases. Install @babel/preset-react and then include it in babel config preset.
+ npm install @babel/preset-react
+
+ 
