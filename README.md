@@ -181,3 +181,8 @@ state.items.push(action.payload);
       - For provider name - select babel.
       - For automatically clear mock calls - say yes.
       this will now create a jest.config.js file.
+ - We need to install JSDOM.  https://testing-library.com/docs/react-testing-library/setup
+- npm install --save-dev jest-environment-jsdom
+    
+when we use __tests__ -> two underscores format is called dunder.
+when we run -> npm run test, it looks for files with this regex -> **/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)
