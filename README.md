@@ -190,4 +190,4 @@ when we run -> npm run test, it looks for files with this regex -> **/__tests__/
  - JSX should be enabled for test cases. Install @babel/preset-react and then include it in babel config preset.
  npm install @babel/preset-react
 
- 
+ - Install @testing-library/jest-dom  - this is needed to use DOM level functions. ( ex: toBeInTheDocument())
